@@ -16,6 +16,7 @@
             font-size: 20px;
             width:80%;
             margin: auto;
+
         }
         #navbar>div{
            display:flex;
@@ -63,7 +64,7 @@
             width:75%;
             margin: auto;
             margin-top:10px;
-            
+
         }
         #page2>div{
             width:50%;
@@ -420,6 +421,7 @@
         padding-right: 70px;
         text-align: left;padding-top: 50px; 
        }
+       /* part 11  */
        #part11{
         width:75%;
         height: auto;
@@ -496,6 +498,26 @@
        span{
         margin-top:24px;
        }
+       /* popup css modal  */
+       #popup{
+        width: 100%;
+        height:400px;background-color: #113229;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        display:none;
+        
+       }
+       #popup>input{
+        height: 40px;
+        width:70% ;
+        margin-top: 160px;
+        background-color:#1e4c3e ;
+        border: 0px;
+        font-size: 50px;
+        padding-left: 10px;
+        color:#e4f4f0;
+       }
     </style>
 </head>
 <body>
@@ -511,12 +533,15 @@
         <div id="nav2">
             <a href="Signin.html"><button id="signin1">Sign in</button></a>
             <button>Request a demo</button>
-            <span class="material-icons">
-                search
-             </span>
-                
+           <button id="modalid"><span  class="material-icons">  search   </span></button> 
         </div>
     </div>
+    <!-- css model when click on search  -->
+    <div class="modal">
+        <div id="popup">
+            <input type="">
+        </div>
+     </div> 
    <!-- hire for what 2nd part -->
    <div id="page2">
       <div>
@@ -766,5 +791,28 @@ supervised_user_circle
 </body>
 </html>
 <script>
+ let span = document.querySelector("#modalid")
+ span.addEventListener("click", myfun);
 
+ function myfun(){
+    let pop=document.querySelector("#popup");
+    pop.style.display="block";
+    let nav=document.querySelector("#navbar");
+    nav.style.backgroundColor="#113229";
+    let but=document.querySelector("#nav2>a>button");
+    but.style.backgroundColor="#113229";
+    let y= document.querySelector("#modalid")
+    y.addEventListener("click", myfun1);
+ }
+
+ function myfun1(){
+    let pop=document.querySelector("#popup");
+    pop.style.display="none";
+    let nav=document.querySelector("#navbar");
+    nav.style.backgroundColor="#ffffff";
+    let but=document.querySelector("#nav2>a>button");
+    but.style.backgroundColor="#ffffff";
+    let y= document.querySelector("#modalid")
+    y.addEventListener("click",myfun);
+ }
 </script>
