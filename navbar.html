@@ -14,9 +14,16 @@
             justify-content:space-between;
             color:grey;
             font-size: 20px;
-            width:80%;
-            margin: auto;
+            width:100%;   
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            background-color: #fefffe;
+            margin-top: 0px;
         }
+        .sticky {
+           position: fixed;
+           top: 0;
+           width: 100%;
+            }
         #navbar>div{
            display:flex;
          
@@ -24,7 +31,7 @@
         }
         #nav1{
             width:50%;
-            height:90%;
+            height:85%;
         }
         #nav1>p{
             margin: auto;
@@ -37,21 +44,23 @@
         }
         #nav2>button:nth-child(2){
             background-color: #3574d6;
-            font-size: 20px;
-            color:rgb(247, 244, 244)
+            font-size: 18px;
+            color:rgb(247, 244, 244);
+            height:90%
           
         }
         #nav2>button{
             border-radius: 20px;
             color:grey
-            ;border:0px;  
+            ;border:0px;
+            
         }
         #nav2>a>button{
             border-radius: 20px;
             color:grey
             ;border:0px;  
             font-size: 22px;
-            padding: 18px;
+            padding: 8px;height: 90%;  
         }
         #nav2>button:hover{
             background-color:#263083 ;
@@ -63,7 +72,7 @@
             width:75%;
             margin: auto;
             margin-top:10px;
-            
+
         }
         #page2>div{
             width:50%;
@@ -111,7 +120,7 @@
             height:600px
             ;width:100%;
         }
-        #part3>div>button{
+        #part3>div>a>button{
             margin-top:20px;
             background-color: #008561;
             border-radius:15px;
@@ -156,7 +165,7 @@
             height:600px
             ;width:100%;
         }
-        #part4>div>button{
+        #part4>div>a>button{
             margin-top:20px;
             background-color: #008561;
             border-radius:15px;
@@ -208,7 +217,8 @@
             margin-top:40px;
             background-color: #008561;
             border-radius:15px;
-            font-size:27px;
+            font-size:17px;
+            padding:10px;
             color:white;
             border:0px
         }
@@ -420,6 +430,7 @@
         padding-right: 70px;
         text-align: left;padding-top: 50px; 
        }
+       /* part 11  */
        #part11{
         width:75%;
         height: auto;
@@ -496,28 +507,89 @@
        span{
         margin-top:24px;
        }
+       /* popup css modal  */
+       #popup{
+        width: 100%;
+        height:400px;background-color: #113229;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        display:none;
+        
+       }
+       #popup>input{
+        height: 40px;
+        width:70% ;
+        margin-top: 160px;
+        background-color:#1e4c3e ;
+        border: 0px;
+        font-size: 50px;
+        padding-left: 10px;
+        color:#e4f4f0;
+       }
+
+       @media screen and (max-width:900px) {
+        #page2{
+            display :grid;
+            grid-template-rows: repeat(2,400px);
+        }
+        #part3{
+            display :grid;
+            grid-template-rows: repeat(2,400px);
+        }
+       #part4{
+        display :grid;
+            grid-template-rows: repeat(2,400px);
+       }   
+       #part5{
+        display :grid;
+            grid-template-rows: repeat(2,400px);
+       }
+      #part6{
+        display :grid;
+            grid-template-rows: repeat(2,400px);
+       }
+       #part7{ display :grid;
+            grid-template-rows: repeat(2,400px);}
+        #part8{        
+            display :grid;
+        grid-template-rows: repeat(2,400px);
+            }
+        #part9{
+            display :grid;
+            grid-template-rows: repeat(2,400px);
+        }    
+    }
     </style>
 </head>
 <body>
     <!-- navbar 1st part -->
-    <div id="navbar">
-        <div id="nav1"> 
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHRMaBwYxebYkpgXXE6tQEL2JKvs6Se1DZru9LU7A&s">
-            <p>Product&Solution</p>
-            <p>Resourse</p>
-            <p>About Us</p>
-            <p>Community</p>
-        </div>
-        <div id="nav2">
-            <a href="Signin.html"><button id="signin1">Sign in</button></a>
-            <button>Request a demo</button>
-            <span class="material-icons">
-                search
-             </span>
-                
-        </div>
-    </div>
+   
    <!-- hire for what 2nd part -->
+   <div id="navbar">
+    <div id="nav1"> 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHRMaBwYxebYkpgXXE6tQEL2JKvs6Se1DZru9LU7A&s">
+        <p>Product&Solution</p>
+        <p>Resourse</p>
+        <p>About Us</p>
+        <p>Community</p>
+    </div>
+    <div id="nav2">
+        <a href="Signin.html"><button id="signin1">Sign in</button></a>
+        <button>Request a demo</button>
+        <button id="modalid"><span class="material-icons">
+            search
+         </span> 
+        </button>
+    </div>
+</div>
+    <!-- css model when click on search  -->
+     <div class="modal">
+        <div id="popup">
+            <input type="">
+        </div>
+     </div> 
+<!-- <part 2 -->
    <div id="page2">
       <div>
         <h1>Hire for <br>what’s next.</h1>
@@ -560,7 +632,7 @@ account_circle
             <p>Major, iterate and improve your hiring process</p>
         </div>
         </div>
-      <button>About Recruiting </button> 
+        <a href="onclickrecruiting.html"><button id="recruiting">About Recruiting</button></a>
      </div>
 
      <div>
@@ -602,7 +674,7 @@ supervised_user_circle
           <p>Keep everything moving forward with automated tasks</p>
       </div>
       </div>
-    <button>About Onboarding </button> 
+      <a href="whenclickononboarding.html"><button id="onboarding">About Onboarding</button></a>
    </div>
    </div>
  <!-- part 5 -->
@@ -766,5 +838,40 @@ supervised_user_circle
 </body>
 </html>
 <script>
+ let span = document.querySelector("#modalid")
+ span.addEventListener("click", myfun);
 
+ function myfun(){
+    let pop=document.querySelector("#popup");
+    pop.style.display="block";
+    let nav=document.querySelector("#navbar");
+    nav.style.backgroundColor="#113229";
+    let but=document.querySelector("#nav2>a>button");
+    but.style.backgroundColor="#113229";
+    let span= document.querySelector("#modalid")
+    span.addEventListener("click", myfun1);
+ }
+
+ function myfun1(){
+    let pop=document.querySelector("#popup");
+    pop.style.display="none";
+    let nav=document.querySelector("#navbar");
+    nav.style.backgroundColor="#ffffff";
+    let but=document.querySelector("#nav2>a>button");
+    but.style.backgroundColor="#ffffff";
+    let span= document.querySelector("#modalid")
+    span.addEventListener("click",myfun);
+ }
+
+ window.onscroll = function() {myFunction()};
+ let navbar = document.getElementById("navbar");
+ let sticky = navbar.offsetTop;
+
+ function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
 </script>
