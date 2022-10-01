@@ -14,10 +14,16 @@
             justify-content:space-between;
             color:grey;
             font-size: 20px;
-            width:80%;
-            margin: auto;
-
+            width:100%;   
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            background-color: #fefffe;
+            margin-top: 0px;
         }
+        .sticky {
+           position: fixed;
+           top: 0;
+           width: 100%;
+            }
         #navbar>div{
            display:flex;
          
@@ -25,7 +31,7 @@
         }
         #nav1{
             width:50%;
-            height:90%;
+            height:85%;
         }
         #nav1>p{
             margin: auto;
@@ -38,21 +44,23 @@
         }
         #nav2>button:nth-child(2){
             background-color: #3574d6;
-            font-size: 20px;
-            color:rgb(247, 244, 244)
+            font-size: 18px;
+            color:rgb(247, 244, 244);
+            height:90%
           
         }
         #nav2>button{
             border-radius: 20px;
             color:grey
-            ;border:0px;  
+            ;border:0px;
+            
         }
         #nav2>a>button{
             border-radius: 20px;
             color:grey
             ;border:0px;  
             font-size: 22px;
-            padding: 18px;
+            padding: 8px;height: 90%;  
         }
         #nav2>button:hover{
             background-color:#263083 ;
@@ -522,27 +530,32 @@
 </head>
 <body>
     <!-- navbar 1st part -->
-    <div id="navbar">
-        <div id="nav1"> 
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHRMaBwYxebYkpgXXE6tQEL2JKvs6Se1DZru9LU7A&s">
-            <p>Product&Solution</p>
-            <p>Resourse</p>
-            <p>About Us</p>
-            <p>Community</p>
-        </div>
-        <div id="nav2">
-            <a href="Signin.html"><button id="signin1">Sign in</button></a>
-            <button>Request a demo</button>
-           <button id="modalid"><span  class="material-icons">  search   </span></button> 
-        </div>
+   
+   <!-- hire for what 2nd part -->
+   <div id="navbar">
+    <div id="nav1"> 
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHRMaBwYxebYkpgXXE6tQEL2JKvs6Se1DZru9LU7A&s">
+        <p>Product&Solution</p>
+        <p>Resourse</p>
+        <p>About Us</p>
+        <p>Community</p>
     </div>
+    <div id="nav2">
+        <a href="Signin.html"><button id="signin1">Sign in</button></a>
+        <button>Request a demo</button>
+        <button id="modalid"><span class="material-icons">
+            search
+         </span> 
+        </button>
+    </div>
+</div>
     <!-- css model when click on search  -->
-    <div class="modal">
+     <div class="modal">
         <div id="popup">
             <input type="">
         </div>
      </div> 
-   <!-- hire for what 2nd part -->
+<!-- <part 2 -->
    <div id="page2">
       <div>
         <h1>Hire for <br>what’s next.</h1>
@@ -801,8 +814,8 @@ supervised_user_circle
     nav.style.backgroundColor="#113229";
     let but=document.querySelector("#nav2>a>button");
     but.style.backgroundColor="#113229";
-    let y= document.querySelector("#modalid")
-    y.addEventListener("click", myfun1);
+    let span= document.querySelector("#modalid")
+    span.addEventListener("click", myfun1);
  }
 
  function myfun1(){
@@ -812,7 +825,19 @@ supervised_user_circle
     nav.style.backgroundColor="#ffffff";
     let but=document.querySelector("#nav2>a>button");
     but.style.backgroundColor="#ffffff";
-    let y= document.querySelector("#modalid")
-    y.addEventListener("click",myfun);
+    let span= document.querySelector("#modalid")
+    span.addEventListener("click",myfun);
  }
+
+ window.onscroll = function() {myFunction()};
+ let navbar = document.getElementById("navbar");
+ let sticky = navbar.offsetTop;
+
+ function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
 </script>
